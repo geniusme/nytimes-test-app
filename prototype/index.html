@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NYT Feed</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!--  Styles for this template -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- pace.js loading bar. Yes, it needs up top. -->
+    <script src="../assets/js/pace/pace.min.js"></script>
+    <link href="../assets/js/pace/themes/pace-theme-flat-top.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">IVM NYT</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">IVM NYT</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Prototype</a></li>
+            <li><a href="../backbone/">Backbone.js</a></li>
+          </ul>
+        </div><!--/.nav-collapse-->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="body-header">
+        <h1>New York Times Feed</h1>
+        <p class="lead">Prototype</p>
+        <hr>
+      </div>
+
+      <section>
+        <div id="articles"><!-- Article tempate gets loaded into this div -->
+        </div>
+      </section>
+      
+      <ul class="pager"><!-- More Button -->
+        <li><a href="#" id='more'>More</a></li>
+      </ul>
+    
+    </div><!-- /container -->
+    
+    <!-- Template structure that is inserted into the #article div -->
+    <script id="articleTemplate" type="text/x-handlebars-template">
+      {{#each docs}}
+      <article>
+        <h2><a href="{{web_url}}" target="_blank">{{headline.main}}</a></h2>
+        <p>{{snippet}}</p>
+        <a href="{{web_url}}" target="_blank">read more</a>
+        <hr>
+      </article>
+      {{/each}}
+    </script>
+    <!-- /Template -->
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!-- handlebars.js CDN -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+    <!-- API Call js -->
+    <script src="js/api.js"></script>
+  </body>
+</html>
+<!-- 
+  ////Notes////
+
+  //CSS
+  I used bootstap for a css framework. This gives access to a nice cross browser boilerplate, a responsive grid system, some helper classes if needed and minimal styling. For prototyping i'll create my own css file and overide default bootstrap classes as needed. 
+  
+  //Handlebars.js
+  I used Handlebars.js for templating. It is super clean, fast just about the easiest way to start consuming a json feed. 4 lines of code in the js file to get going.
+
+  //api.js
+  I used jquery as a javascript library. I did a more procedural approach with the mindset to prototype quickly then decide on a framework later. Code is commented.
+
+  //pace.js
+  This is a fun ajax loading indicator library. It is literally a drop in library and adds a nice visual element anytime an ajax call is fired.
+
+ -->
