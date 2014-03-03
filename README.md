@@ -6,5 +6,5 @@ nytimes-test-app
 ###Prototype
 This is the plain jQuery prototype that was built to quickly show functionality.
 
-###Bacbone
+###Backbone
 This is the Backbone.js version of Prototype.
