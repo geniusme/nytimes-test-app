@@ -32,7 +32,7 @@ var ArticleList = Backbone.View.extend({
 				var template = _.template($('#articleTemplate').html(), {articles: docs})
 				self.$('#articles').append(template);
 				
-				//console.log(res.models[0].attributes.response.docs);				
+				console.log(res.models[0].attributes.response.docs);				
 			},
 			error: function(){
 				console.log('error');

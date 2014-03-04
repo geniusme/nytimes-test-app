@@ -73,15 +73,21 @@
     </div><!-- /container -->
 
     <script type="text/tempate" id="articleTemplate">
-    <% _.each(articles, function(article) { %>
-      <article>
-        <h2><a href="<%= article.web_url %>" target="_blank"><%= article.headline['main'] %></a></h2>
-        <p><%= article.snippet %></p>
-        <a href="<%= article.web_url %>" target="_blank">read more</a>
-      </article>
-      <hr>
-    <% }); %>
+    <% if(articles.length == 0){%>
+      <h2>Sorry, no results.</h2>
+    <%} else {%> 
 
+    <% _.each(articles, function(article) { %>
+  
+        <article>
+          <h2><a href="<%= article.web_url %>" target="_blank"><%= article.headline['main'] %></a></h2>
+          <p><%= article.snippet %></p>
+          <a href="<%= article.web_url %>" target="_blank">read more</a>
+        </article>
+        <hr>
+
+    <% }); %>
+    <% } %>
     </script>
     <!-- Template of the Tweets View -->
 <script type="text/template" id="tweetsTemplate">
