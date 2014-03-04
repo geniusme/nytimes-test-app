@@ -39,7 +39,8 @@ var ArticleList = Backbone.View.extend({
 	},
 	events: {
 		'click a#more': 'loadMore',//more button in case infinite does not fire.
-		'scroll': 'infiniteScroll' 
+		'scroll': 'infiniteScroll',
+		'keypress #search': 'searchSubmit' 
 	},
 	loadMore: function(e){
 		e.preventDefault();
@@ -76,7 +77,14 @@ var ArticleList = Backbone.View.extend({
 				articleList.render();//render the view again to append the new page to the bottom
 	       }
 	    });
+    },
+    searchSubmit: function(e){
+    	if(e.which === 13){// enter key
+	    	val = $(e.target).val();	
+	    	console.log(val)    		
+    	} 
     }
+    
 
 });
 
