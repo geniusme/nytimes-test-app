@@ -80,8 +80,12 @@ var ArticleList = Backbone.View.extend({
     },
     searchSubmit: function(e){
     	if(e.which === 13){// enter key
-	    	val = $(e.target).val();	
-	    	console.log(val)    		
+	    	val = $(e.target).val();
+	    	articleModel.set('term', val);//set the search term
+	    	this.$('#articles').empty()//clear the current article list
+	    	articleList.render();
+	    	
+	    	console.log(val);    		
     	} 
     }
     
