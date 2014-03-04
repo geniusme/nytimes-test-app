@@ -23,6 +23,19 @@ a.navbar-brand {
 	border-radius: 20px;
 }
 .navbar-white {
- background-color: rgba(255,255,255, .9); 
-border-color: #E6E6E6;
+	background-color: rgba(255,255,255, .9); 
+	border-color: #E6E6E6;
+}
+.bs-callout {
+	margin: 20px 0;
+	padding: 20px;
+	border-left: 3px solid #eee;
+}
+.bs-callout-info {
+background-color: #f4f8fa;
+border-color: #5bc0de;
+}
+article:hover {
+background-color: #f4f8fa;
+border-color: #5bc0de;
 }

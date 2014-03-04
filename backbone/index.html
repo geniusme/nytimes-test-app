@@ -81,7 +81,7 @@
 
     <% _.each(articles, function(article) { %>
   
-        <article>
+        <article class="bs-callout">
           <h2><a href="<%= article.web_url %>" target="_blank"><%= article.headline['main'] %></a></h2>
           <p><%= article.snippet %></p>
           <a href="<%= article.web_url %>" target="_blank">read more</a>
