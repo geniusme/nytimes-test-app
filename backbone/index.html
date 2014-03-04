@@ -86,20 +86,11 @@
           <p><%= article.snippet %></p>
           <a href="<%= article.web_url %>" target="_blank">read more</a>
         </article>
-        <hr>
+        
 
     <% }); %>
     <% } %>
     </script>
-    <!-- Template of the Tweets View -->
-<script type="text/template" id="tweetsTemplate">
-    <% _.each(tweets, function (tweet) { %>
-    <div class="tweet">
-        <p>@<%= tweet.from_user %></p>
-        <p class="text"><%= tweet.text %></p><p><%= tweet.location %></p>
-    </div>
-    <% }); %>
-</script>
     
     <!-- Bootstrap core JavaScript
     ================================================== -->
