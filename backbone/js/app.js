@@ -3,7 +3,7 @@
 var ArticleModel = Backbone.Model.extend({
 	defaults: function() {
 		return {
-			term: 'beer',
+			term: '',
 			page: 1			
 		};
 	},
@@ -84,7 +84,7 @@ var ArticleList = Backbone.View.extend({
 	    	articleModel.set('term', val);//set the search term
 	    	this.$('#articles').empty()//clear the current article list
 	    	articleList.render();
-	    	
+
 	    	console.log(val);    		
     	} 
     }
