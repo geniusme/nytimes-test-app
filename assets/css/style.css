@@ -23,6 +23,6 @@ a.navbar-brand {
 	border-radius: 20px;
 }
 .navbar-white {
- background-color: #ffffff; 
+ background-color: rgba(255,255,255, .9); 
 border-color: #E6E6E6;
 }
