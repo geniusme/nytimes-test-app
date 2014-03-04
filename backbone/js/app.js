@@ -20,7 +20,7 @@ var Articles = Backbone.Collection.extend({
 
 var ArticleList = Backbone.View.extend({
 	el: 'body',
-	render: function(page){
+	render: function(){
 
 		var articles = new Articles;
 		console.log(articles);
@@ -31,8 +31,11 @@ var ArticleList = Backbone.View.extend({
 				var docs = res.models[0].attributes.response.docs;
 				var template = _.template($('#articleTemplate').html(), {articles: docs})
 				self.$('#articles').append(template);
-				//debugging	
-				//console.log(res.models[0].attributes.response.docs);			
+				
+				//console.log(res.models[0].attributes.response.docs);				
+			},
+			error: function(){
+				console.log('error');
 			}
 		});
 
@@ -106,7 +109,7 @@ var articleModel = new ArticleModel();
 //Initiate Router
 var router = new Router();
 	router.on('route:home', function() {
-		articleList.render();
+		//articleList.render();
 		articleList.infiniteScroll();
 		console.log('home page');
 });
