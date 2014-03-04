@@ -22,3 +22,7 @@ a.navbar-brand {
 	line-height: 1.33;
 	border-radius: 20px;
 }
+.navbar-white {
+ background-color: #ffffff; 
+border-color: #E6E6E6;
+}
