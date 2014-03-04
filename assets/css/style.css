@@ -32,10 +32,10 @@ a.navbar-brand {
 	border-left: 3px solid #eee;
 }
 .bs-callout-info {
-background-color: #f4f8fa;
-border-color: #5bc0de;
+	background-color: #f4f8fa;
+	border-color: #5bc0de;
 }
 article:hover {
-background-color: #f4f8fa;
-border-color: #5bc0de;
+	background-color: #f4f8fa;
+	border-color: #5bc0de;
 }
