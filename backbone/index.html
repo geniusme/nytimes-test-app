@@ -75,8 +75,8 @@
     </div><!-- /container -->
 
     <script type="text/tempate" id="articleTemplate">
-    <% if(articles.length == 0){%>
-      <h2>Sorry, no results.</h2>
+    <% if(articles.length == 0){ $('section').css('background-color', 'rgba(255,255,255, 0)');%>
+      <h2 class="no-results">Sorry, no results.</h2>
     <%} else {%> 
 
     <% _.each(articles, function(article) { %>
