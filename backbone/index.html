@@ -79,7 +79,7 @@
       <h2 class="no-results">Sorry, no results.</h2>
     <%} else {%> 
 
-    <% _.each(articles, function(article) { %>
+    <% _.each(articles, function(article) { $('section').css('background-color', 'rgba(255,255,255, 1)'); %>
   
         <article class="bs-callout">
           <h2><a href="<%= article.web_url %>" target="_blank"><%= article.headline['main'] %></a></h2>
