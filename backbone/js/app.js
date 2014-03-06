@@ -43,7 +43,7 @@ var ArticleList = Backbone.View.extend({
 	events: {
 		'click a#more': 'loadMore',//more button in case infinite does not fire.
 		'scroll': 'infiniteScroll',
-		'keypress #search': 'searchSubmit' 
+		'keypress #search': 'searchSubmit'
 	},
 	loadMore: function(e){
 		e.preventDefault();
