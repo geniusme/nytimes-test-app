@@ -65,11 +65,7 @@
       <div class="clearfix"></div>
       <section>
         <div id="articles"><!-- Article tempate gets loaded into this div -->
-<!--             <article class="bs-callout">
-              <h2><a href="" target="_blank">Headline Goes Here</a></h2>
-              <p>Breyers, Ben & Jerry's, Edy's and Yuengling's: Which thing is not like the others?</p>
-              <a href="" target="_blank">read more</a>
-            </article> -->
+
         </div>
       </section>
 
@@ -87,10 +83,12 @@
     <% _.each(articles, function(article) { $('section').css('background-color', 'rgba(255,255,255, 1)'); %>
   
         <article class="bs-callout">
-                      <span class="article-charms">
-                <span class="glyphicon glyphicon-star-empty"></span>
-                <span class="glyphicon glyphicon-info-sign"></span>
-              </span>
+          
+          <span class="article-charms">
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <span class="glyphicon glyphicon-info-sign"></span>
+          </span>
+          
           <h2><a href="<%= article.web_url %>" target="_blank"><%= article.headline['main'] %></a></h2>
           <p><%= article.snippet %></p>
           <a href="<%= article.web_url %>" target="_blank">read more</a>
