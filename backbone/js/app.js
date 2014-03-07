@@ -43,7 +43,8 @@ var ArticleList = Backbone.View.extend({
 	events: {
 		'click a#more': 'loadMore',//more button in case infinite does not fire.
 		'scroll': 'infiniteScroll',
-		'keypress #search': 'searchSubmit'
+		'keypress #search': 'searchSubmit',
+		'mouseenter article.bs-callout': 'charmsOptions'
 	},
 	loadMore: function(e){
 		e.preventDefault();
@@ -90,6 +91,10 @@ var ArticleList = Backbone.View.extend({
 
 	    	console.log(val);    		
     	} 
+    },
+    charmsOptions: function(e){
+    	attr = $(e.target);
+    	console.log(attr[0].className);
     }
     
 
