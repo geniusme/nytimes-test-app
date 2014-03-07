@@ -55,8 +55,8 @@
 
       <div class="body-header">
         <h1>New York Times Feed</h1>
-        <p class="lead">Backbone.js</p>
-        <hr>
+        <p class="lead">An experiment with Backbone.js</p>
+        <!-- <hr> -->
       </div>
 
       <div class="search col-md-4 col-md-offset-4">
@@ -65,6 +65,7 @@
       <div class="clearfix"></div>
       <section>
         <div id="articles"><!-- Article tempate gets loaded into this div -->
+
         </div>
       </section>
 
@@ -75,13 +76,19 @@
     </div><!-- /container -->
 
     <script type="text/tempate" id="articleTemplate">
-    <% if(articles.length == 0){%>
-      <h2>Sorry, no results.</h2>
+    <% if(articles.length == 0){ $('section').css('background-color', 'rgba(255,255,255, 0)');%>
+      <h2 class="no-results">Sorry, no results.</h2>
     <%} else {%> 
 
-    <% _.each(articles, function(article) { %>
+    <% _.each(articles, function(article) { $('section').css('background-color', 'rgba(255,255,255, 1)'); %>
   
         <article class="bs-callout">
+          
+          <span class="article-charms">
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <span class="glyphicon glyphicon-info-sign"></span>
+          </span>
+          
           <h2><a href="<%= article.web_url %>" target="_blank"><%= article.headline['main'] %></a></h2>
           <p><%= article.snippet %></p>
           <a href="<%= article.web_url %>" target="_blank">read more</a>

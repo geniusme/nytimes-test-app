@@ -1,9 +1,19 @@
 body {
-  padding-top: 50px;
+    padding-top: 50px;
+    background: url(../img/office-bg.jpg) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 }
 .body-header {
-  padding: 40px 15px;
-  text-align: center;
+	margin-top:20%;
+    padding: 40px 15px;
+    text-align: center;
+    color: #ffffff;
+}
+.body-header>h1,.body-header>p {
+	text-shadow: 0px 0px 5px #000;
 }
 h1,h2 {
 	font-weight: 100;
@@ -23,7 +33,7 @@ a.navbar-brand {
 	border-radius: 20px;
 }
 .navbar-white {
-	background-color: rgba(255,255,255, .9); 
+	background-color: rgba(255,255,255, 1); 
 	border-color: #E6E6E6;
 }
 .navbar-toggle{
@@ -33,7 +43,7 @@ background-color:rgba(246, 246, 246, 1);
 	background-color: #B7B7B7;
 }
 .bs-callout {
-	margin: 20px 0;
+	margin: 0px;
 	padding: 20px;
 	border-left: 3px solid #eee;
 }
@@ -41,7 +51,28 @@ background-color:rgba(246, 246, 246, 1);
 	background-color: #f4f8fa;
 	border-color: #5bc0de;
 }
+section{
+	background-color: rgba(255,255,255, 1);
+	margin-top: 20px;
+}
+.no-results{
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 0px 0px 5px #000;
+}
+article{
+	position: relative;
+}
 article:hover {
 	background-color: #f4f8fa;
-	border-color: #5bc0de;
+	/*border-color: #5bc0de;*/
+	border-right: 26px solid #5bc0de;
+	border-left: 3px solid #5bc0de;
+}
+.article-charms{
+	display: none;
+	position: absolute;
+	width: 20px;
+	right: -26px;
+	color: #ffffff;
 }

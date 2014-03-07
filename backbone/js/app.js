@@ -43,7 +43,9 @@ var ArticleList = Backbone.View.extend({
 	events: {
 		'click a#more': 'loadMore',//more button in case infinite does not fire.
 		'scroll': 'infiniteScroll',
-		'keypress #search': 'searchSubmit' 
+		'keypress #search': 'searchSubmit',
+		'mouseenter article.bs-callout': 'showCharms',
+		'mouseleave article.bs-callout': 'hideCharms'
 	},
 	loadMore: function(e){
 		e.preventDefault();
@@ -90,8 +92,15 @@ var ArticleList = Backbone.View.extend({
 
 	    	console.log(val);    		
     	} 
-    }
-    
+    },
+    showCharms: function(e){
+    	charms = $(e.currentTarget.children);
+    	charms.show();
+    },
+    hideCharms: function(e){
+    	charms = $('span.article-charms');
+    	charms.hide();
+    }    
 
 });
 
