@@ -1,7 +1,9 @@
 nytimes-test-app
 ================
 
-###Simple app to be a study of javascript frameworks/libraries and UI/UX. 
+###Simple app to be a study of javascript frameworks/libraries and UI/UX.
+[View it here](http://geniusme.github.io/nytimes-test-app/)
+
 The intended functionality at the moment is:
 - Enter a search term and load a list of articles from the NY Times article API.
 - Infinite scolling.
