@@ -12,7 +12,13 @@ var ArticleModel = Backbone.Model.extend({
     }
 });
 
+var SavedArticles = Backbone.Model.extend({
+	//model for saved article objects
+	arts: []
+});
+
 var Articles = Backbone.Collection.extend({
+	models:'ArticleModel',
 	url: function(){
 		return 'http://api.nytimes.com/svc/search/v2/articlesearch.json?&fq=headline:('+ articleModel.get('term') +')&page='+ articleModel.get('page') +'&api-key=6d6f7bcd9b701c38e1ff40dc40ef5b8a:13:68866710'
 	}
@@ -45,7 +51,8 @@ var ArticleList = Backbone.View.extend({
 		'scroll': 'infiniteScroll',
 		'keypress #search': 'searchSubmit',
 		'mouseenter article.bs-callout': 'showCharms',
-		'mouseleave article.bs-callout': 'hideCharms'
+		'mouseleave article.bs-callout': 'hideCharms',
+		'click span#save': 'saveArticle'
 	},
 	loadMore: function(e){
 		e.preventDefault();
@@ -100,6 +107,11 @@ var ArticleList = Backbone.View.extend({
     hideCharms: function(e){
     	charms = $('span.article-charms');
     	charms.hide();
+    },
+    saveArticle: function(e){
+    	url   = $(e.currentTarget).data('url');
+    	title = $(e.currentTarget).data('title');
+    	console.log(url+ ': '+title);
     }    
 
 });
@@ -114,6 +126,7 @@ var Router = Backbone.Router.extend({
 //Initiate view/collections
 var articleList = new ArticleList();
 var articleModel = new ArticleModel();
+var savedArticles = new SavedArticles();
 
 //Initiate Router
 var router = new Router();
