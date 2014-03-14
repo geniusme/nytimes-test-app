@@ -47,9 +47,8 @@
             <li><a href="../prototype/">Prototype</a></li>
             <li class="active"><a href="#">Backbone.js</a></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right" id="artList">
-          <!-- saved articles go here -->
-          </ul>
+          <div id="artList"></div>
+
         </div><!--/.nav-collapse-->
       </div>
     </div>
@@ -104,7 +103,7 @@
     </script>
     <!-- Saved articles template -->
     <script type="text/tempate" id="artListTemplate">
-
+<ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= savedArts.length %> Saved <b class="caret"></b></a>
       <ul class="dropdown-menu">
@@ -113,7 +112,7 @@
       <% }); %>
       </ul>
     </li>
-    
+</ul>    
     </script>
 
     <!-- Bootstrap core JavaScript

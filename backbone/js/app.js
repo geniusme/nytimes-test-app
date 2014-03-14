@@ -17,10 +17,12 @@ var SavedArticles = Backbone.Model.extend({
 	url: function(){
 		return 'google.com';
 	},
-	arts: [{
-		title: 'bob',
-		url: 'bob.com'
-	}]
+	initialize: function(){
+		this.bind('change', function(event) {
+			console.log('saved srt list changed');
+		});
+	},
+	arts: []
 });
 
 var Articles = Backbone.Collection.extend({
@@ -119,25 +121,31 @@ var ArticleList = Backbone.View.extend({
     	title = $(e.currentTarget).data('title');
 
     	savedArticles.arts.push({title: title, url: url});
-
+    	savedArticleList.update();
     	console.log(savedArticles.arts);
     }    
 
 });
 
 var SavedArticleList = Backbone.View.extend({
-	el: 'body',
+
+	el: 'div#artList',
+	tagName: '#artList',
+	initialize: function() {
+        console.log('saved art list init')
+    },	
 	render: function(){
 
-		var savedArticles = new SavedArticles;
-		console.log(savedArticles);
-
-		var self = this;
 		arts = savedArticles.arts;
 
 		var template = _.template($('#artListTemplate').html(), {savedArts: arts})
-		self.$('#artList').append(template);
+		$('#artList').append(template);
 
+	},
+	update: function(){
+		this.model.off('change', this.render);
+        this.$el.children().remove();
+        savedArticleList.render();
 	}
 });
 
@@ -148,11 +156,11 @@ var Router = Backbone.Router.extend({
 	}
 });
 
-//Initiate view/collections
+//Initiate view/collections/models
 var articleList = new ArticleList();
 var articleModel = new ArticleModel();
 var savedArticles = new SavedArticles();
-var savedArticleList = new SavedArticleList();
+var savedArticleList = new SavedArticleList({model: savedArticles});
 
 //Initiate Router
 var router = new Router();
