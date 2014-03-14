@@ -47,6 +47,9 @@
             <li><a href="../prototype/">Prototype</a></li>
             <li class="active"><a href="#">Backbone.js</a></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right" id="artList">
+          <!-- saved articles go here -->
+          </ul>
         </div><!--/.nav-collapse-->
       </div>
     </div>
@@ -75,6 +78,7 @@
     
     </div><!-- /container -->
 
+    <!-- Article template -->
     <script type="text/tempate" id="articleTemplate">
     <% if(articles.length == 0){ $('section').css('background-color', 'rgba(255,255,255, 0)');%>
       <h2 class="no-results">Sorry, no results.</h2>
@@ -98,7 +102,20 @@
     <% }); %>
     <% } %>
     </script>
+    <!-- Saved articles template -->
+    <script type="text/tempate" id="artListTemplate">
+
+    <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= savedArts.length %> Saved <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+      <% _.each(savedArts, function(savedArt){ %>
+        <li><a href="#"><%= savedArt.title %></a></li>
+      <% }); %>
+      </ul>
+    </li>
     
+    </script>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- jQuery CDN -->

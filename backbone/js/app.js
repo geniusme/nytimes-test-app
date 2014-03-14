@@ -14,7 +14,13 @@ var ArticleModel = Backbone.Model.extend({
 
 var SavedArticles = Backbone.Model.extend({
 	//model for saved article objects
-	arts: []
+	url: function(){
+		return 'google.com';
+	},
+	arts: [{
+		title: 'bob',
+		url: 'bob.com'
+	}]
 });
 
 var Articles = Backbone.Collection.extend({
@@ -119,6 +125,22 @@ var ArticleList = Backbone.View.extend({
 
 });
 
+var SavedArticleList = Backbone.View.extend({
+	el: 'body',
+	render: function(){
+
+		var savedArticles = new SavedArticles;
+		console.log(savedArticles);
+
+		var self = this;
+		arts = savedArticles.arts;
+
+		var template = _.template($('#artListTemplate').html(), {savedArts: arts})
+		self.$('#artList').append(template);
+
+	}
+});
+
 //Router for some later functionality
 var Router = Backbone.Router.extend({
 	routes: {
@@ -130,12 +152,13 @@ var Router = Backbone.Router.extend({
 var articleList = new ArticleList();
 var articleModel = new ArticleModel();
 var savedArticles = new SavedArticles();
+var savedArticleList = new SavedArticleList();
 
 //Initiate Router
 var router = new Router();
 	router.on('route:home', function() {
-		//articleList.render();
 		articleList.infiniteScroll();
+		savedArticleList.render();
 		console.log('home page');
 });
 //History
