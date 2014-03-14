@@ -111,7 +111,10 @@ var ArticleList = Backbone.View.extend({
     saveArticle: function(e){
     	url   = $(e.currentTarget).data('url');
     	title = $(e.currentTarget).data('title');
-    	console.log(url+ ': '+title);
+
+    	savedArticles.arts.push({title: title, url: url});
+
+    	console.log(savedArticles.arts);
     }    
 
 });
