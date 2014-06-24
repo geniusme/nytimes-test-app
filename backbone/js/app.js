@@ -8,7 +8,7 @@ var ArticleModel = Backbone.Model.extend({
 		};
 	},
 	initialize: function(){
-    	console.log('ArticleModel loaded successfully');
+    	//console.log('ArticleModel loaded successfully');
     }
 });
 
