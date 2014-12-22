@@ -8,7 +8,7 @@ var ArticleModel = Backbone.Model.extend({
 		};
 	},
 	initialize: function(){
-    	//console.log('ArticleModel loaded successfully');
+    	console.log('ArticleModel loaded successfully');
     }
 });
 
@@ -19,7 +19,7 @@ var SavedArticles = Backbone.Model.extend({
 	},
 	initialize: function(){
 		this.bind('change', function(event) {
-			console.log('saved srt list changed');
+			console.log('saved article list has changed');
 		});
 	},
 	arts: []
@@ -99,7 +99,7 @@ var ArticleList = Backbone.View.extend({
 	    });
     },
     searchSubmit: function(e){
-    	if(e.which === 13){// enter key
+    	if(e.which === 13){// Enter key
 	    	val = $(e.target).val();
 	    	articleModel.set('term', val);//set the search term
 	    	this.$('#articles').empty()//clear the current article list
